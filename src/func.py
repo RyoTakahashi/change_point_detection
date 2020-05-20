@@ -32,11 +32,20 @@ def calc_speak_time(df, kakasi, speaker_id=None):
     return df
 
 
-def change_point_detection(df, window_size=5, threshold=0.15):
+def change_point_detection(df, window_size=5, threshold=0.15, output_type='extract'):
 
     if 'speak_scores' not in df.columns:
         raise Exception('speak_scores does not exist in df. Please do calc_speak_time() in advance.')
 
     roll_ave = df.speak_scores.rolling(window=window_size).mean()
 
-    return df[abs(df.speak_scores - roll_ave) >= threshold], roll_ave
+    if output_type == 'extract':
+        result = df[abs(df.speak_scores - roll_ave) >= threshold]
+    elif output_type == 'all':
+        df['roll_ave'] = roll_ave
+        df['change_points'] = [1 if abs(df.speak_scores[i] - roll_ave[i]) >= threshold else 0 for i in range(len(df.speak_scores))]
+        result = df
+    else:
+        raise Exception('output_type should be "extract" or "all"')
+
+    return result
