@@ -1,0 +1,8 @@
+input_path: './dataset/rau.json'
+output_path: './output/rau_test.xlsx'
+speaker_id: 'spk_0'
+window_size: 5
+odds: 0.10
+# output_type : 'all' or 'extract'
+output_type: 'all'
+stop_words: ['です', 'ます', 'はい', 'すいません', 'すみません', 'ごめんなさい', 'だよね', 'ですね']
