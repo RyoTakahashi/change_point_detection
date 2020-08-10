@@ -1,5 +1,5 @@
 # Change Point Detection
-Amazon Transcribe（JA）の結果から、発話量を測定。発話量の変化点を検知する。
+Amazon Transcribe（JP）の結果から、発話量を測定。発話量の変化点を検知する。
 
 ## 必要なライブラリ
 ``
