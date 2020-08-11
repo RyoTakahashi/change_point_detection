@@ -1,8 +1,10 @@
-input_path: './dataset/rau.json'
-output_path: './output/rau_test.xlsx'
+# input file must be .csv or .json format
+# output file must be .xlsx format
+# output_type : 'all' or 'extract'
+input_path: './dataset/test.json'
+output_path: './output/test_result.xlsx'
 speaker_id: 'spk_0'
 window_size: 5
 odds: 0.10
-# output_type : 'all' or 'extract'
 output_type: 'all'
 stop_words: ['です', 'ます', 'はい', 'すいません', 'すみません', 'ごめんなさい', 'だよね', 'ですね']
